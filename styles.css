@@ -1,3 +1,8 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+
 body{
     margin: 0;
     font-family: cursive ;
@@ -42,7 +47,6 @@ h2{
 
 }
 
-
 .clock .text{
     height: 30px;
     font-size: 10px;
@@ -59,4 +63,79 @@ h2{
     height: 30px;
     font-size: 20px;
     background: pink;
+}
+
+.physical-clock {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, .35);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.physical-clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+
+.physical-clock .number1 { --rotation: 30deg;}
+.physical-clock .number2 { --rotation: 60deg;}
+.physical-clock .number3 { --rotation: 90deg;}
+.physical-clock .number4 { --rotation: 120deg;}
+.physical-clock .number5 { --rotation: 150deg;}
+.physical-clock .number6 { --rotation: 180deg;}
+.physical-clock .number7 { --rotation: 210deg;}
+.physical-clock .number8 { --rotation: 240deg;}
+.physical-clock .number9 { --rotation: 270deg;}
+.physical-clock .number10 { --rotation: 300deg;}
+.physical-clock .number11 { --rotation: 330deg;}
+
+.physical-clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid lightskyblue;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.physical-clock::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.physical-clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.physical-clock .hand.minute{
+    width: 6px;
+    height: 40%;
+    background-color: black;
+}
+
+.physical-clock .hand.hour{
+    width: 9px;
+    height: 35%;
+    background-color: black;
 }
