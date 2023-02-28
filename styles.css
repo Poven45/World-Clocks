@@ -36,15 +36,13 @@ h2{
 .clock span{
     width: 100px;
     height: 80px;
-    background-color: darkslateblue;
-    opacity: .8;
+    background-color: rgba(71, 61, 138, .8);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
     text-shadow: 2px 2px 4px rgba(0,0,0, 0.3);
-
 }
 
 .clock .text{
@@ -56,13 +54,28 @@ h2{
 }
 
 .clock #am{
-
     bottom: 0;
     position: absolute;
     width: 60px;
     height: 30px;
     font-size: 20px;
     background: pink;
+    padding: 4px 12px 4px 12px;
+}
+
+.clock #military-time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    font-size: 16px;
+    color: white;
+    background: pink;
+    border: 1px solid black;
+    padding: 4px 8px 4px 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0, 0.3);
 }
 
 .physical-clock {
